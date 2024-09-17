@@ -8,12 +8,11 @@ app.use(express.json());
 app.use(bodyParser.text());
 app.use('/api', authRoutes);
 
-app.use('/protected', verifyJwt, async (req, res) => {
+app.use('/protected-routes', verifyJwt, async (req, res) => {
     try {
-        console.log(req.user);
-        res.json({message: 'Here are your transactions!'});
+        res.json({message: 'Authenticated successfully', user: req.user});
     } catch (error) {
-        res.status(500).json({error: 'Something went wrong'});
+        res.status(500).json({error: 'Authenticated unsuccessfully'});
     }
 });
 
