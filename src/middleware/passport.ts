@@ -48,8 +48,7 @@ export function verifyCookie(req: Request, res: Response, next: NextFunction) {
 
         // Attach the user ID or other payload to the request
         req.user = decoded;
+        console.log(req.user, decoded);
         next();
     });
 }
-
-

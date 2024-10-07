@@ -4,7 +4,7 @@ import {checkEnv} from "./config/env";
 import {connectDB} from "./config/db";
 
 dotenv.config();
-checkEnv(["PORT", "MONGODB_URI", "MONGODB_DB_NAME", "JWT_SECRET"]);
+checkEnv(["PORT", "MONGODB_URI", "MONGODB_DB_NAME", "JWT_SECRET", "NODE_ENV", "TRANSACTIONS_TRACKER_FRONTEND"]);
 connectDB();
 
 app.listen(process.env.PORT, () => {
