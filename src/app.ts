@@ -2,9 +2,16 @@ import express, {Request, Response} from 'express';
 import bodyParser from 'body-parser';
 import authRoutes from "./routes/authRoutes";
 import {verifyJwt} from "./middleware/passport";
+import cors from "cors";
+import cookieParser from "cookie-parser";
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
+app.use(cors({
+    origin: process.env.TRANSACTIONS_TRACKER_FRONTEND,  // Transactions-tracker-frontend origin
+    credentials: true,  // Allow credentials (cookies)
+}));
 app.use(bodyParser.text());
 app.use('/api', authRoutes);
 
