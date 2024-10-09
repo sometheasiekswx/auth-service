@@ -21,17 +21,6 @@ passport.use(new JwtStrategy(jwtOptions, (jwtPayload, done) => {
 
 export const authenticateJwt = passport.authenticate('jwt', {session: false});
 
-// A middleware to check authentication before accessing a route
-export const verifyJwt = (req: Request, res: Response, next: NextFunction) => {
-    passport.authenticate('jwt', {session: false}, (err: any, user: any) => {
-        if (err || !user) {
-            return res.status(401).json({message: 'Unauthorized'});
-        }
-        req.user = user;
-        next();
-    })(req, res, next);
-};
-
 // Middleware to verify JWT token from cookies
 export function verifyCookie(req: Request, res: Response, next: NextFunction) {
     const token = req.cookies.jwt;
@@ -52,3 +41,14 @@ export function verifyCookie(req: Request, res: Response, next: NextFunction) {
         next();
     });
 }
+
+// A middleware to check authentication before accessing a route
+export const verifyJwt = (req: Request, res: Response, next: NextFunction) => {
+    passport.authenticate('jwt', {session: false}, (err: any, user: any) => {
+        if (err || !user) {
+            return res.status(401).json({message: 'Unauthorized'});
+        }
+        req.user = user;
+        next();
+    })(req, res, next);
+};
