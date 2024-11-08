@@ -3,8 +3,10 @@ import User from "../models/User";
 import jwt from 'jsonwebtoken';
 import {reqBodyIsEmpty} from "../utils/expressRequest";
 
-const tokenExpires = '1d';
-const cookieMaxAge = 24 * 60 * 60 * 1000;  // 1 day in milliseconds,
+const tokenExpires = '2d';
+// const tokenExpires = '10s';
+const cookieMaxAge = 2 * 24 * 60 * 60 * 1000;  // 2 day in milliseconds,
+// const cookieMaxAge = 10 * 1000;  // 10s in milliseconds,
 
 export async function register(req: Request, res: Response) {
     if (reqBodyIsEmpty(req.body)) {
