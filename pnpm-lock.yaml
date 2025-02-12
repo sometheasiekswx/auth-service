@@ -30,8 +30,8 @@ importers:
         specifier: ^9.0.2
         version: 9.0.2
       mongoose:
-        specifier: ^8.6.2
-        version: 8.10.0(socks@2.8.4)
+        specifier: ^8.9.5
+        version: 8.9.5(socks@2.8.4)
       passport:
         specifier: ^0.7.0
         version: 0.7.0
@@ -556,8 +556,8 @@ packages:
   mongodb-connection-string-url@3.0.2:
     resolution: {integrity: sha512-rMO7CGo/9BFwyZABcKAWL8UJwH/Kc2x0g72uhDWzG48URRax5TCIcJ7Rc3RZqffZzO/Gwff/jyKwCU9TN8gehA==}
 
-  mongodb@6.13.0:
-    resolution: {integrity: sha512-KeESYR5TEaFxOuwRqkOm3XOsMqCSkdeDMjaW5u2nuKfX7rqaofp7JQGoi7sVqQcNJTKuveNbzZtWMstb8ABP6Q==}
+  mongodb@6.12.0:
+    resolution: {integrity: sha512-RM7AHlvYfS7jv7+BXund/kR64DryVI+cHbVAy9P61fnb1RcWZqOW1/Wj2YhqMCx+MuYhqTRGv7AwHBzmsCKBfA==}
     engines: {node: '>=16.20.1'}
     peerDependencies:
       '@aws-sdk/credential-providers': ^3.188.0
@@ -583,8 +583,8 @@ packages:
       socks:
         optional: true
 
-  mongoose@8.10.0:
-    resolution: {integrity: sha512-nLhk3Qrv6q/HpD2k1O7kbBqsq+/kmKpdv5KJ+LLhQlII3e1p/SSLoLP6jMuSiU6+iLK7zFw4T1niAk3mA3QVug==}
+  mongoose@8.9.5:
+    resolution: {integrity: sha512-SPhOrgBm0nKV3b+IIHGqpUTOmgVL5Z3OO9AwkFEmvOZznXTvplbomstCnPOGAyungtRXE5pJTgKpKcZTdjeESg==}
     engines: {node: '>=16.20.1'}
 
   mpath@0.9.0:
@@ -933,7 +933,7 @@ snapshots:
 
   '@types/mongoose@5.11.97(socks@2.8.4)':
     dependencies:
-      mongoose: 8.10.0(socks@2.8.4)
+      mongoose: 8.9.5(socks@2.8.4)
     transitivePeerDependencies:
       - '@aws-sdk/credential-providers'
       - '@mongodb-js/zstd'
@@ -1366,7 +1366,7 @@ snapshots:
       '@types/whatwg-url': 11.0.5
       whatwg-url: 14.1.1
 
-  mongodb@6.13.0(socks@2.8.4):
+  mongodb@6.12.0(socks@2.8.4):
     dependencies:
       '@mongodb-js/saslprep': 1.2.0
       bson: 6.10.2
@@ -1374,11 +1374,11 @@ snapshots:
     optionalDependencies:
       socks: 2.8.4
 
-  mongoose@8.10.0(socks@2.8.4):
+  mongoose@8.9.5(socks@2.8.4):
     dependencies:
       bson: 6.10.2
       kareem: 2.6.3
-      mongodb: 6.13.0(socks@2.8.4)
+      mongodb: 6.12.0(socks@2.8.4)
       mpath: 0.9.0
       mquery: 5.0.0
       ms: 2.1.3
